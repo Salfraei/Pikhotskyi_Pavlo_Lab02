@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=70"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pikhotskyi-student-manager"
+version = "0.2.0"
+description = "Professional Python laboratories 1 and 2: student manager and structured data analytics"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{ name = "Піхоцький Павло" }]
+dependencies = []
+
+[project.scripts]
+student-manager = "student_manager.main:main"
+student-analytics = "student_manager.lab02.main:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools]
+package-dir = { "" = "src" }
