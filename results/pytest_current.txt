@@ -1,0 +1,4 @@
+Verification of corrected variant-15 project
+Lab02: 39 passed
+Command: python -m pytest -q
+Includes common variant-15 model tests plus current lab tests.
