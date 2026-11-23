@@ -1,65 +1,64 @@
-# Experiment Manager — Lab 02
+# Experiment Manager
 
 Laboratory project for the course "Professional Python".
 
 ## Description
 
-Collections and functional data analysis. Individual variant: **15** — scientific experiment results.
+Console application for recording scientific experiments and processing experimental data using Python collections.
+Individual variant: **15** — scientific experiment results.
 
-Проаналізувати записи експериментів у колекціях Python: групування за параметрами й дослідниками, агрегування результатів, сортування та пошук.
+For each experiment, the program stores `experiment_id`, `name`, `researcher`, `parameter`, `result`, and `date`.
+It supports searching by researcher, filtering by result range, grouping, sorting and calculating experimental statistics.
 
-Core experiment fields: `experiment_id`, `name`, `researcher`, `parameter`, `result`, `date`.
-This project is a cumulative version of the same application (laboratories 01–02); previous Python modules are preserved in `src/student_manager/`.
-
-The implementation includes list, tuple, set, dict, collections, comprehensions, *args, **kwargs, closures, decorators, search, filtering and grouping.
+Laboratory work No. 2 extends the application from Lab 01 with `list`, `tuple`, `set`, `dict`, `Counter`, `defaultdict`, `deque`, comprehensions, `*args`, `**kwargs`, `lambda`, closures and decorators.
 
 ## Requirements
 
-Python 3.11+.
+Python 3.11+
 
 ## Installation
-
-Create a virtual environment:
 
 ```powershell
 python -m venv .venv
 ```
 
-Activate it in Windows PowerShell:
+Activate the virtual environment (Windows PowerShell):
 
 ```powershell
 .\.venv\Scripts\Activate.ps1
 ```
 
-Install the project in editable mode with testing dependencies:
+Install the project in editable mode:
 
 ```powershell
 python -m pip install -e ".[dev]"
 ```
 
-If script activation is disabled, use `.\.venv\Scripts\python.exe` in place of `python` in all commands.
-
 ## Run
-
-Run the current laboratory as a Python module:
-
-```powershell
-python -m student_manager.lab02.main
-```
-
-Run the base console application (laboratory 01):
 
 ```powershell
 python -m student_manager.main
 ```
 
-or through its console command:
+or:
 
 ```powershell
 student-manager
 ```
 
-Run automated tests:
+Run the additional Lab 02 data processing demonstration:
+
+```powershell
+python -m student_manager.lab02.main
+```
+
+Example of the Lab 02 benchmarking mode:
+
+```powershell
+python -m student_manager.lab02.main --mode benchmark
+```
+
+Run the tests:
 
 ```powershell
 python -m pytest -v
@@ -82,22 +81,32 @@ Pikhotskyi_Pavlo_Lab02/
 │       ├── readers.py
 │       ├── repositories.py
 │       └── lab02/
-├── tests/
+│           ├── __init__.py
+│           ├── main.py
+│           ├── data.py
+│           ├── processors.py
+│           ├── analytics.py
+│           ├── decorators.py
+│           └── benchmark.py
 ├── data/
+│   └── experiments_sample.csv
+├── tests/
 ├── results/
 └── report/
+    └── Pikhotskyi_Pavlo_Lab02.pdf
 ```
 
-`src/student_manager/models.py` — base `Experiment`, `Researcher`, and `ExperimentStatistics` models.  
-`src/student_manager/services.py` — core business logic, researcher search, value-range filtering, and statistics.  
-`src/student_manager/main.py` — shared application entry point.  
-`src/student_manager/lab02/` — additional modules specific to laboratory 02.  
-`src/student_manager/lab02/data.py` — sample experiment records.  
-`src/student_manager/lab02/processors.py` — processing and grouping.  
-`src/student_manager/lab02/analytics.py` — statistics and aggregation.  
-`src/student_manager/lab02/decorators.py` — decorators.  
-`src/student_manager/lab02/benchmark.py` — performance measurements.  
-`tests/` — unit/integration tests; `data/` — sample experimental data; `results/` — execution output; `report/` — PDF report.
+`src/student_manager/models.py` — data models `Experiment`, `Researcher`, `ExperimentStatistics`.  
+`src/student_manager/services.py` — business logic, search, filtering, statistics.  
+`src/student_manager/main.py` — base application entry point from Lab 01.  
+`src/student_manager/lab02/data.py` — sample scientific experiment records and collection indexes.  
+`src/student_manager/lab02/processors.py` — filtering, grouping, sorting, and collection operations.  
+`src/student_manager/lab02/analytics.py` — statistical aggregation.  
+`src/student_manager/lab02/decorators.py` — decorator for measuring execution time.  
+`src/student_manager/lab02/main.py` — Lab 02 application entry point.  
+`tests/` — automated tests.  
+`data/` — sample scientific experiment data.  
+`report/` — laboratory report in PDF format.
 
 ## Author
 
